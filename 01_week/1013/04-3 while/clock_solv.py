@@ -13,9 +13,8 @@ def time_data():
     now = datetime.now()
     twelve_hour=twelve(now)
     nt = f"{twelve_hour:02}{now.minute:02}{now.second:02}"
-    print()
-    n = 0
-    for n in range(5):
+    print() 
+    for n in [0,1,2,3,4]:
         print(
             bt[nt[0]][n],
             bt[nt[1]][n],

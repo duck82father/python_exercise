@@ -5,8 +5,7 @@ def print_n_times(n, *values):
             for value in values:
                   print(value)
                   # 단순한 줄바꿈
-            print()
+            print("")
 
 # 함수를 호출합니다.
 print_n_times(3, "안녕하세요", "즐거운", "파이썬 프로그래밍")
-

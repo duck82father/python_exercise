@@ -10,4 +10,3 @@ def sum_all(start, end):
 
 # 함수 호출
 print("0 to 100 :", sum_all(0, 100))
-    

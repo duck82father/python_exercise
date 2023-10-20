@@ -42,5 +42,9 @@ for i in fw_list:
 
 # 결과값 출력
 print("\n[ 결과값 ]")
-print("k = {}일때,\n세토사 : {}개".format(k,sts))
-print("베르시컬러 : {}개".format(k - sts))
+print("k = {}일때, 세토사 : {}개, 베르시컬러 : {}개".format(k,sts,(k-sts)))
+
+if k-sts > sts:
+    print("\n입력된 좌표는 '베르시컬러'입니다.")
+else:
+    print("\n입력된 좌표는 '세토사'입니다.")

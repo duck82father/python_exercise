@@ -13,12 +13,12 @@ def csv_read(csv_file):
         i = int(i)
         sum += i
 
-    print()
-    print("csv 파일 개별 항목 :", lst)
-    print("csv 개별 항목의 합 :", sum)
+    print("[ csv 파일 계산결과 ]")
+    print("csv 파일 개별 항목 :", lst, type(lst))
+    print("csv 개별 항목의 합 :", sum, type(sum))
     print()
     
-    return sum
+    return lst, sum
     
 
 # 자체파일 실행일 경우 예시 csv 문서를 들러들인 후 출력

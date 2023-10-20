@@ -29,6 +29,7 @@ for fw in flowers:
         fw_list.append((vector, fw_sort))
     else:
         fw_sort = 0
+        fw_list.append((vector, fw_sort))
 
 # vector 값을 오름차순으로 정리 (가까운 값부터)
 vector_list = sorted(vector_list, key=float)

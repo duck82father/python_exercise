@@ -8,8 +8,6 @@ def like(len_txt, nums, cal, solv):
         like(len_txt-2, nums, cal, solv)
     return solv
 
-#
-
 if __name__ == "__main__":
 
     len_txt = 5

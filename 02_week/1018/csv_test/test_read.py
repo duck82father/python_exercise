@@ -2,14 +2,16 @@ import csv
 
 # 함수 선언 : csv파일을 불러드려 내용을 출력 및 리턴
 def csv_read(csv_file):
-    data = csv.reader(open(csv_file, 'r'))
+    data = csv.reader(open(csv_file, mode='r'))
     
     lst = []
     for row in data:
+        print(row)
         lst += row
 
     sum = 0
     for i in lst:
+        print(i)
         i = int(i)
         sum += i
 

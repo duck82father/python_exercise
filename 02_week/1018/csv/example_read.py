@@ -12,6 +12,7 @@ def read_file(csv_file):
 
         # 읽은 파일의 각 행을 반복 가능한 객체로 저장한다.
         for row in csv_reader:
+            print(row)
             lst += row
             # l += flatting_list.flatting(row)
     

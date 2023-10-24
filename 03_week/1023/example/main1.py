@@ -4,9 +4,9 @@ import cal_mul
 import cal_div
 
 if __name__ == '__main__':
-    a = cal_sum.like(1, 2)
-    b = cal_sub.like(2, 1)
-    c = cal_mul.like(2, 2)
-    d = cal_div.like(2, 1)
+    a = cal_sum.isthis(1, 2)
+    b = cal_sub.isthis(2, 1)
+    c = cal_mul.isthis(2, 2)
+    d = cal_div.isthis(2, 1)
     print("a = {}, b = {}, c = {}, d = {}".format(a,b,c,d))
 

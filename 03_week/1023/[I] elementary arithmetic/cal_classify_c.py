@@ -81,17 +81,20 @@ def to_calculate(text_list):
     
     for i in range(len(text_list)):
 
-        if text_list[i] not in "+-*/()":    # 숫자
-            if pass_check == 1:
-                pass_check = 0
-                pass
-            elif text_list[i-1] == "-":
-                new_list.append(int(text_list[i])*-1)
-            else:
-                new_list.append(int(text_list[i]))
-                mid_sum = text_list[i]
-        # elif i==range(len(text_list)-1):
-        #     new_list.append(text_list[i])
+        if pass_check == 1:
+            pass_check = 0
+            pass
+        else:
+            if text_list[i] not in "+-*/()":    # 숫자
+                
+                if text_list[i-1] == "-":
+                    new_list.append(int(text_list[i])*-1)
+                    mid_sum = int(text_list[i])*-1
+                else:
+                    new_list.append(int(text_list[i]))
+                    mid_sum = int(text_list[i])
+            # elif i==range(len(text_list)-1):
+            #     new_list.append(text_list[i])
         
         if text_list[i] in "*/":    # 곱셈, 나눗셈
             what_calc_type = cal_type(text_list[i])
@@ -100,22 +103,18 @@ def to_calculate(text_list):
             new_list.append(mid_sum)
             pass_check = 1
 
-        # elif text_list[i] in "+":    # 덧셈
-        #     new_list.append(text_list[i])
-        
-        # elif text_list[i] in "-":    # 뺄셈
+        # elif text_list[i] in "+-":   # 덧셈, 뺄셈
         #     new_list.append(text_list[i])
 
 
-    print("new_list : ", new_list)
+    # print("new_list : ", new_list)
 
     final = 0
     
     for j in new_list:
         final += j
-        return final
     
-    print("final : ", final)
+    # print("final : ", final)
 
     return final
     
@@ -136,6 +135,5 @@ if __name__ == "__main__":
     text_list = ['100', '+', '100', '*', '3', '-', '25', '*', '2', '*', '2', '+', '7', '*', '3']
     result_cal = to_calculate(text_list)
 
-    print(text_list)
     print(result_cal)
     # print(plus_minus([100, '+', 300, '-', 100, '+', 21], 0))

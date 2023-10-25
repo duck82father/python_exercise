@@ -1,10 +1,15 @@
-text_list = ['1', '+', '(', '2', '+', '3', ")", "+", "4"]
-new_list = []
+from string import ascii_lowercase as LOWERS
 
-for j in text_list[3:len(text_list)]:
-    if j == ")":
-        break
-    else:
-        new_list.append(j)
+dict = { key:n for key, n in zip(LOWERS, range(1, 27)) }
 
-print(new_list)
+
+
+
+
+
+
+
+
+
+dict = {key:c**2 for key, c in zip('ABCDE', range(1, 6))}
+print(dict)

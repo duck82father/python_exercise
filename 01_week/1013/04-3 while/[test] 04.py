@@ -4,15 +4,31 @@
 
 # 1 * 99, 2 * 98, 3 * 97, 4 * 96, ....
 
-sum_value = 0
-next_sum_value = 0
+# 틀린 답
+# sum_value = 0
+# next_sum_value = 0
 
-for i in range(1, 100):
-    if sum_value > next_sum_value:
-        i-=1
-        break
-    else:
-        sum_value = i*(100-i)
-        next_sum_value = (i+1)*(99-i)
+# for i in range(1, 100):
+#     if sum_value > next_sum_value:
+#         i-=1
+#         break
+#     else:
+#         sum_value = i*(100-i)
+#         next_sum_value = (i+1)*(99-i)
 
-print("최대가 되는 경우: {} * {} = {}".format(i, 100-i, sum_value))
+# print("최대가 되는 경우: {} * {} = {}".format(i, 100-i, sum_value))
+
+max_value = 0
+a = 0
+b = 0
+
+for i in range(1, 100//2+1):
+    j = 100 - i
+    
+    current = i*j
+    if current > max_value :
+        a = i
+        b = j
+        max_value = current
+
+print("최대가 되는 경우: {} * {} = {}".format(a, b, max_value))

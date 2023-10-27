@@ -25,17 +25,31 @@ def cal_type(cal_type):
 
 
 # 수식을 item(숫자, 산술기호)로 개별 분리, 2자리 이상의 숫자일 경우 합쳐서 읽기
-def isthis(text, len_text):
+def isthis(text):
     
     global memory
-    items=[]
-    items_index=0
+    items = []
+    items_index = 0
+    bracket_items = []
+    bracket = 'off'
 
     for text_index, char in enumerate(text):
         if text_index == 0:                                             # 맨 처음 str은 무조건 items에 신규 추가
             items.append(char)
+        elif char == '(':
+            num = text_index+1
+            while text[num+1] != ')':
+                bracket_items.append(text[num])
+                num += 1
+                print(bracket_items)
+            isthis(bracket_items, len(bracket_items))
+            bracket = 'on'
+        elif bracket == 'on':
+            pass
         elif char not in "+-*/" and text[text_index-1] not in "+-*/":   # 현재 srt과 이전 str 모두 숫자일 경우, 가장 마지막 items에 더하기
             items[items_index]+=char                                    # items의 [0] 인덱스에 추가
+        elif char == ')':
+            continue
         else:
             items.append(char)                                          # 현재 str이 문자이거나, 문자 다음에 오는 숫자일 경우 items에 신규 추가
             items_index+=1                                              # items의 인덱스 값 +1 추가
@@ -86,7 +100,7 @@ def to_calculate(text_list):
 
 if __name__ == "__main__":  
     
-    text_list = "1+2*3/4+105320*10-1091*50*2/33-19"
+    text_list = "1+2*3/(4+105320)*10-1091*50*2/33-19"
     isthis(text_list, len(text_list))
     # result_cal = to_calculate(text_list)
 

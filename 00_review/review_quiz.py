@@ -1,3 +1,23 @@
+# [ 변수, 반복문, 함수 ]
+
+# 문제: 사용자로부터 숫자 n을 입력받아, 별(*)로 이루어진 n 단계의 삼각형을 출력하세요.
+
+n = int(input("숫자 n 입력 : "))
+
+for i in range(n):
+    print('*'*n)
+
+print()
+
+#
+
+n = int(input("숫자 n 입력 : "))
+NewStars = ""
+print(NewStars.join(['*'*n+'\n' if i < n-1 else '*'*n for i in range(n)]))
+
+
+
+
 # [ 변수, 자료형, 반복문, 함수 ]
 
 # 문제: 주어진 리스트(임의 입력값을 입력)의 모든 요소의 평균을 반환하는 함수 average를 작성하세요.

@@ -30,10 +30,10 @@ def isthis(text, len_text):
         global memory
         char = text[i]
 
-        if check == 'on':
-            if i == (len_text-1):
+        if check == 'on':                   # memory에 이전 문자와 현재 문자를 합하여  
+            if i == (len_text-1):           # 마지막 요소 확인
                 items.append(memory)
-                print("> items :", items)  # 테스트용 출력
+                print("> items :", items)   # 테스트용 출력
                 return items
             
             if not_int(text[i+1]):
@@ -43,18 +43,18 @@ def isthis(text, len_text):
             else:
                 memory += text[i]
 
-        elif i == (len_text-1):
+        elif i == (len_text-1):             # 마지막 요소 확인
             items.append(char)
-            print("> items_ :", items)    # 테스트용 출력
+            print("> items_ :", items)      # 테스트용 출력
             return items
 
-        elif not_int(char):
+        elif not_int(char):                 # 현재 문자가 숫자가 아니면 items에 추가
             items.append(char)
 
-        elif not_int(text[i+1]):          
+        elif not_int(text[i+1]):            # 현재 문자가 숫자이면서 다음 문자가 숫자가 아니면 items에 추가
             items.append(char)
 
-        else:
+        else:                               # memory에 현재 문자와 다음 문자를 합하여 저장
             memory=str(text[i])+str(text[i+1])
             check='on'
 
@@ -101,7 +101,8 @@ def to_calculate(text_list):
 
 if __name__ == "__main__":  
     
-    text_list = ['1','+','1']
-    result_cal = to_calculate(text_list)
+    text_list = "110*10"
+    isthis(text_list, len(text_list))
+    # result_cal = to_calculate(text_list)
 
-    print(result_cal)
+    # print(result_cal)

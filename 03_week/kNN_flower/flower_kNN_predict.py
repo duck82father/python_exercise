@@ -10,7 +10,7 @@ from sklearn.model_selection import KFold, cross_val_score
 cwd = os.getcwd()
 df = pd.read_csv(os.path.join(cwd, "data", "iris.csv"))
 
-# 데이터에서 분별력이 없는 특징(꽃받침의 너비(sepal.width), 꽃잎의 길이(petal.length) 제거
+# 데이터에서 분별력이 없는 특징( 꽃받침의 너비(sepal.width), 꽃잎의 길이(petal.length) ) 제거
 df.drop(["sepal.width", "petal.length"], axis=1, inplace=True)
 
 # 20%의 테스트 데이터 분리
@@ -54,6 +54,12 @@ input_target = pd.DataFrame({
 # knn 알고리즘에 타겟 데이터를 넣어 예측값 출력
 pred = knn.predict(input_target)
 
+# 결과값 출력
+print("포지션 예측: ", pred)
+
+
+############  그래프 출력  #############
+
 # 합산 데이터(전체 데이터 + 타켓 데이터) 만들기
 input_target['variety'] = ['Target']
 new_df = pd.concat([df, input_target], ignore_index=True)
@@ -63,6 +69,3 @@ sns.lmplot(x='sepal.length', y='petal.width', data=new_df, fit_reg=False, scatte
 plt.title("Sepal length and Petal width of Iris(Setosa, Versicolor, Virginia)") # 그래프의 제목을 설정
 
 plt.show()  # 그래프를 화면에 표시
-
-# 결과값 출력
-print("포지션 예측: ", pred)

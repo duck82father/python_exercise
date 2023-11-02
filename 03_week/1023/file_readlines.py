@@ -1,4 +1,4 @@
-with open("info.txt", "r") as file:
+with open(".\data\info.txt", "r") as file:
     for line in file:
         # 변수 선언
         (name, weight, height) = line.strip().split(", ")

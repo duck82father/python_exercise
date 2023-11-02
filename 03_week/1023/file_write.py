@@ -5,7 +5,7 @@ import random
 hanguls = list("가나다라마바사아자차카타파하")
 
 # 파일 쓰기모드로 열기
-with open("info.txt", "w") as file:
+with open(".\data\info.txt", "w") as file:
     for i in range(1000):
         # 랜덤한 값으로 변수 생성
         name = random.choice(hanguls) + random.choice(hanguls)

@@ -13,11 +13,11 @@ def dis_list(a, b):
 
 # 작은 값부터 정렬
 def sort(lst):
-    print()
-    print("print(lst)", lst)
-    print("print(enumerate(lst))", enumerate(lst))
-    print("list(print(enumerate(lst)))", list(enumerate(lst)))
-    print()
+    # print()
+    # print("print(lst)", lst)
+    # print("print(enumerate(lst))", enumerate(lst))
+    # print("list(print(enumerate(lst)))", list(enumerate(lst)))
+    # print()
     sorted_lst = sorted(enumerate(lst), key=lambda x: x[1])
     # 정렬된 (인덱스, 값) 쌍을 다시 정렬된 순서대로 인덱스를 추출
     sorted_idx = [index for index, value in sorted_lst]

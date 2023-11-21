@@ -10,6 +10,7 @@ class MariaDBConnector:
 
     def connect(self):
         try:
+            # **self.config ==> **kwarg : keyword arguments, 딕셔너리형태의 가변인자
             self.conn = mariadb.connect(**self.config)
             return self.conn
         except mariadb.Error as e:
